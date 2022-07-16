@@ -1,12 +1,16 @@
-#pragma once
+#ifndef SHOOTER_H
+#define SHOOTER_H
+
 #include "General.h"
+#include "Bubble.h"
+#include "LinkedList.h"
 
 class Shooter
 {
 public:
 	Bubble* m_shootingpoint;
 	float m_shootingangle;
-	Interface::COLOR m_bubblecolor;
+	COLOR m_bubblecolor;
 	//refrence to list of Point belonging to Shooter
 	//Point* m_shooterptr;
 private:
@@ -17,3 +21,4 @@ private:
 	Shooter();
 	~Shooter();
 };
+#endif

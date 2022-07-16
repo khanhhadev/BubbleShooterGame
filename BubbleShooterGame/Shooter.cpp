@@ -1,5 +1,6 @@
 #include "Shooter.h"
 
+extern LinkedList<Bubble> bubbleList;
 int Shooter::score(int timeconst, int num)
 // num = so luong bong
 {
@@ -36,19 +37,19 @@ void Shooter::changeColor()
 {
 	delete m_shootingpoint;
 	m_shootingpoint = new Bubble();
-	m_bubblecolor = *m_shootingpoint->getColor();
+	m_bubblecolor = m_shootingpoint->getColor();
 };
 
 int Shooter::checkBubble(LinkedList<Bubble>& bubblelist, Bubble& Obj)
 {
 	int bubbleCount = 0;
-
+	return bubbleCount;
 };
 
 Shooter::Shooter()
 {
 	m_shootingpoint = new Bubble();
-	m_bubblecolor = *m_shootingpoint->getColor();
+	m_bubblecolor = m_shootingpoint->getColor();
 	bubbleList.push_back(*m_shootingpoint);
 }
 

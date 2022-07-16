@@ -1,5 +1,6 @@
 #include "GameInterface.h"
-using namespace Interface;
+
+extern LinkedList<Point> pointList;
 
 GameInterface::GameInterface()
 {
@@ -8,12 +9,14 @@ GameInterface::GameInterface()
 		for (int col = 1;col <= SCREEN_LENGTH; col++)
 		{
 			if ((row == 1)||(row == (SCREEN_HEIGHT))) pointList.push_back(Point(row, col));
+			else if ((col == 1) || (col == (SCREEN_LENGTH))) pointList.push_back(Point(row, col));
 		}
 	}
 }
 
 GameInterface::~GameInterface()
 {
+
 }
 
 ostream& operator<< (ostream& output, LinkedList<Point>& m_point)
@@ -24,6 +27,7 @@ ostream& operator<< (ostream& output, LinkedList<Point>& m_point)
 		//*iterator la Point
 		//(* iterator1).getX
 	}
+	return output;
 }
 
 

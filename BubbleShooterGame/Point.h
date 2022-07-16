@@ -1,5 +1,9 @@
-#pragma once
-#include "General.h"
+#ifndef POINT_H
+#define POINT_H
+
+#include <iostream>
+#include <string>
+using namespace std;
 #define PI 3.14
 
 //convert from string to integer
@@ -44,6 +48,9 @@ public:
 	//assignment operator = oveloading
 	Point& operator= (Point& p);
 
+	//assignment operator = oveloading
+	Point& operator= (const Point& p);
+
 	//addition operator + oveloading
 	Point operator+ (Point& p);
 
@@ -78,3 +85,4 @@ public:
 
 	bool operator== (Point& p);
 };
+#endif

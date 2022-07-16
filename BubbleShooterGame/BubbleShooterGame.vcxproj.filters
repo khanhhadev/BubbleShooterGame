@@ -27,8 +27,11 @@
     <Filter Include="Point">
       <UniqueIdentifier>{e8d8485e-4d20-4c4a-9487-2c4e5463e70e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="General">
+    <Filter Include="Source Files\General">
       <UniqueIdentifier>{745bb0c5-6933-492b-a9ee-61d1bb99911b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4f717d31-8fa1-422f-b139-a87cd4032504}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,7 +54,10 @@
       <Filter>Point</Filter>
     </ClInclude>
     <ClInclude Include="General.h">
-      <Filter>General</Filter>
+      <Filter>Source Files\General</Filter>
+    </ClInclude>
+    <ClInclude Include="Source.h">
+      <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +75,12 @@
     </ClCompile>
     <ClCompile Include="GameInterface.cpp">
       <Filter>GameInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,9 @@
-﻿#pragma once
-#include "Student.h"
+﻿#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+
+#include <iostream>
+#include <string>
 using namespace std;
 
 template <class T>
@@ -256,3 +260,4 @@ public:
 	};
 
 };
+#endif
