@@ -1,6 +1,8 @@
 #pragma once
 #include "Bubble.h"
+#include "LinkedList.h"
 #include "Point.h"
+
 class GameInterface
 {
 public:
@@ -8,9 +10,9 @@ public:
 	~GameInterface();
 
 private:
-	Point* m_point;
 	int m_count;
-	friend ostream& operator<< (ostream& output, GameInterface);
+	void bubbleSort();
+	friend ostream& operator<< (ostream& output, LinkedList<Point>& m_point);
 };
 
 GameInterface::GameInterface()

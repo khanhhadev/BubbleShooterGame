@@ -1,4 +1,13 @@
 #pragma once
+#include "LinkedList.h"
+#include "Point.h"
+#include "Bubble.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+LinkedList<Point> pointList;
+LinkedList<Bubble> bubbleList;
 
 namespace Interface
 {
@@ -11,4 +20,11 @@ namespace Interface
 	const int BUBBLE_COLUMN = 1;
 
 	const char POINT = 254;
+
+
+	enum COLOR {
+		RED = 1,
+		GREEN,
+		YELLOW,
+	};
 }

@@ -1,8 +1,5 @@
 #pragma once
-#include <iostream>
-#include <string>
-using namespace std;
-
+#include "General.h"
 #define PI 3.14
 
 //convert from string to integer
@@ -36,11 +33,16 @@ public:
 	//set value for m_x, m_y of Point object
 	void set(int, int);
 
+	static void swap(Point&, Point&);
+
 	//calculate distance between 2 points
 	static float distance(Point&, Point&);
 
 	//calculate dot product between 2 points
 	static int dotProduct(Point&, Point&);
+
+	//assignment operator = oveloading
+	Point& operator= (Point& p);
 
 	//addition operator + oveloading
 	Point operator+ (Point& p);

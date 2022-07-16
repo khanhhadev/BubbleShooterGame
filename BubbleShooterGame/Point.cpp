@@ -21,17 +21,20 @@ int toInt(const string& s)
 Point::Point()
 {
 
+	pointList.push_back(*this);
 };
 
 Point::Point(int x, int y):m_x(x), m_y(y)
 {
 
+	pointList.push_back(*this);
 };
 
 //copy constructor
 Point::Point(Point& p):m_x(p.m_x), m_y(p.m_y)
 {
 
+	pointList.push_back(*this);
 };
 
 //return m_x value of Point object
@@ -76,6 +79,21 @@ int Point::dotProduct(Point& pA, Point& pB)
 {
 	return (pA.m_x * pB.m_y + pA.m_y * pB.m_x);
 };
+void Point::swap(Point& p1, Point& p2)
+{
+	Point temp = p1;
+	p1 = p2;
+	p2 = temp;
+};
+
+//addition operator + oveloading 
+Point& Point::operator= (Point& p)
+{
+	m_x = m_x + p.m_x;
+	m_y = m_y + p.m_y;
+	return *this;
+};
+
 
 //addition operator + oveloading 
 Point Point::operator+ (Point& p)

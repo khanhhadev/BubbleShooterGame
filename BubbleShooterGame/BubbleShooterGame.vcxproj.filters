@@ -50,7 +50,7 @@
     <ClInclude Include="Point.h">
       <Filter>Point</Filter>
     </ClInclude>
-    <ClInclude Include="Common.h">
+    <ClInclude Include="General.h">
       <Filter>General</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,14 +61,14 @@
     <ClCompile Include="Bubble.cpp">
       <Filter>Bubble</Filter>
     </ClCompile>
-    <ClCompile Include="GameInterface.cpp">
-      <Filter>GameInterface</Filter>
-    </ClCompile>
     <ClCompile Include="Line.cpp">
       <Filter>Line</Filter>
     </ClCompile>
     <ClCompile Include="Shooter.cpp">
       <Filter>Shooter</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInterface.cpp">
+      <Filter>GameInterface</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

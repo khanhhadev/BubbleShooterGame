@@ -1,25 +1,19 @@
 #pragma once
-#include "Point.h"
-#include "Common.h"
+#include "General.h"
+
 class Shooter
 {
 public:
-	Point m_shootingpoint;
+	Bubble* m_shootingpoint;
 	float m_shootingangle;
 
 	//refrence to list of Point belonging to Shooter
-	Point* m_shooterptr;
+	//Point* m_shooterptr;
 private:
+	void changeColor();
+	int score(int timeconst, int num);
+	void shooting(LinkedList<Bubble>& bubblelist, int y);
+	int checkBubble(LinkedList<Bubble>& bubblelist, Bubble&);
 	Shooter();
 	~Shooter();
 };
-
-Shooter::Shooter()
-{
-
-}
-
-Shooter::~Shooter()
-{
-
-}
