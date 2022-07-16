@@ -1,0 +1,18 @@
+// ham tinh diem
+int tinhDiem( int timeconst, int num)
+// num = so luong bong
+{
+	int a;  // so diem
+	int score;
+	if( num = 3 || num = 4)
+	{
+		a = 1*num*timeconst;
+	}
+	else if (num >= 5)
+	{
+		a = 2*num*timeconst;
+	}
+	score = a;
+	return score; 
+}
+
