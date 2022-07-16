@@ -6,7 +6,7 @@ class Shooter
 public:
 	Bubble* m_shootingpoint;
 	float m_shootingangle;
-
+	Interface::COLOR m_bubblecolor;
 	//refrence to list of Point belonging to Shooter
 	//Point* m_shooterptr;
 private:

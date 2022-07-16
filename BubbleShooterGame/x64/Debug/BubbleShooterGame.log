@@ -1,0 +1,91 @@
+﻿  Bubble.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(10,19): error C2065: 'Bubble': undeclared identifier
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(10,8): error C2923: 'LinkedList': 'Bubble' is not a valid template type argument for parameter 'T'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(10): message : see declaration of 'Bubble'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(24,21): warning C4309: 'initializing': truncation of constant value
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(6,28): error C2662: 'void LinkedList<T>::push_back(const T &)': cannot convert 'this' pointer from 'LinkedList' to 'LinkedList<T> &'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(6,28): message : Reason: cannot convert from 'LinkedList' to 'LinkedList<T>'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(6,2): message : Conversion requires a second user-defined-conversion operator or constructor
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(193,7): message : see declaration of 'LinkedList<T>::push_back'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(13,28): error C2662: 'void LinkedList<T>::push_back(const T &)': cannot convert 'this' pointer from 'LinkedList' to 'LinkedList<T> &'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(13,28): message : Reason: cannot convert from 'LinkedList' to 'LinkedList<T>'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(13,2): message : Conversion requires a second user-defined-conversion operator or constructor
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(193,7): message : see declaration of 'LinkedList<T>::push_back'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(19,41): error C2662: 'LinkedList<T>::Iterator LinkedList<T>::find(const T &)': cannot convert 'this' pointer from 'LinkedList' to 'LinkedList<T> &'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(19,41): message : Reason: cannot convert from 'LinkedList' to 'LinkedList<T>'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(19,20): message : Conversion requires a second user-defined-conversion operator or constructor
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(224,26): message : see declaration of 'LinkedList<T>::find'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(19,42): error C2662: 'void LinkedList<T>::remove(LinkedList<T>::Iterator)': cannot convert 'this' pointer from 'LinkedList' to 'LinkedList<T> &'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(19,42): message : Reason: cannot convert from 'LinkedList' to 'LinkedList<T>'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.cpp(19,2): message : Conversion requires a second user-defined-conversion operator or constructor
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(145,7): message : see declaration of 'LinkedList<T>::remove'
+  GameInterface.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(3,26): error C2871: 'Interface': a namespace with this name does not exist
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(9,16): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(9,27): error C2061: syntax error: identifier 'COLOR'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,2): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,19): error C3646: 'getColor': unknown override specifier
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,27): error C2059: syntax error: '('
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,35): error C2238: unexpected token(s) preceding ';'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(12,19): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(12,30): error C2061: syntax error: identifier 'COLOR'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,2): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,19): error C3646: 'm_color': unknown override specifier
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(24,21): warning C4309: 'initializing': truncation of constant value
+  Point.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(3,26): error C2871: 'Interface': a namespace with this name does not exist
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(9,16): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(9,27): error C2061: syntax error: identifier 'COLOR'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,2): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,19): error C3646: 'getColor': unknown override specifier
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,27): error C2059: syntax error: '('
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,35): error C2238: unexpected token(s) preceding ';'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(12,19): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(12,30): error C2061: syntax error: identifier 'COLOR'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(17,7): error C2143: syntax error: missing ';' before '*'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(17,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(17,20): error C2238: unexpected token(s) preceding ';'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,2): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,19): error C3646: 'm_color': unknown override specifier
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(9,19): error C2065: 'Point': undeclared identifier
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(9,8): error C2923: 'LinkedList': 'Point' is not a valid template type argument for parameter 'T'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(9): message : see declaration of 'Point'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(24,21): warning C4309: 'initializing': truncation of constant value
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(8,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(13,16): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(24,27): error C2662: 'void LinkedList<T>::push_back(const T &)': cannot convert 'this' pointer from 'LinkedList' to 'LinkedList<T> &'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(24,27): message : Reason: cannot convert from 'LinkedList' to 'LinkedList<T>'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(24,2): message : Conversion requires a second user-defined-conversion operator or constructor
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(193,7): message : see declaration of 'LinkedList<T>::push_back'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(30,27): error C2662: 'void LinkedList<T>::push_back(const T &)': cannot convert 'this' pointer from 'LinkedList' to 'LinkedList<T> &'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(30,27): message : Reason: cannot convert from 'LinkedList' to 'LinkedList<T>'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(30,2): message : Conversion requires a second user-defined-conversion operator or constructor
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(193,7): message : see declaration of 'LinkedList<T>::push_back'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(37,27): error C2662: 'void LinkedList<T>::push_back(const T &)': cannot convert 'this' pointer from 'LinkedList' to 'LinkedList<T> &'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(37,27): message : Reason: cannot convert from 'LinkedList' to 'LinkedList<T>'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(37,2): message : Conversion requires a second user-defined-conversion operator or constructor
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(193,7): message : see declaration of 'LinkedList<T>::push_back'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(74,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Shooter.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(3,26): error C2871: 'Interface': a namespace with this name does not exist
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(9,16): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(9,27): error C2061: syntax error: identifier 'COLOR'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,2): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,19): error C3646: 'getColor': unknown override specifier
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,27): error C2059: syntax error: '('
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(10,35): error C2238: unexpected token(s) preceding ';'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(12,19): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(12,30): error C2061: syntax error: identifier 'COLOR'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,2): error C2653: 'Interface': is not a class or namespace name
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,19): error C3646: 'm_color': unknown override specifier
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(18,26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(24,21): warning C4309: 'initializing': truncation of constant value
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Shooter.cpp(25,89): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'Bubble'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Shooter.cpp(25,89): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Shooter.cpp(39,36): error C2039: 'getColor': is not a member of 'Bubble'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(5): message : see declaration of 'Bubble'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Shooter.cpp(51,36): error C2039: 'getColor': is not a member of 'Bubble'
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Bubble.h(5): message : see declaration of 'Bubble'
+  Generating Code...

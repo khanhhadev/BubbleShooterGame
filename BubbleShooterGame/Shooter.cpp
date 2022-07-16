@@ -22,8 +22,8 @@ void Shooter::shooting(LinkedList<Bubble>& bubblelist, int col)
 	int currentrow = 5;
 	for (int row = currentrow; row >= 0; row--)
 	{
-		LinkedList<Point>::Iterator pointptr = m_point.find(Bubble(row, col));
-		if (pointptr != m_point.end())
+		LinkedList<Bubble>::Iterator pointptr = bubblelist.find(Bubble(row, col, m_bubblecolor));
+		if (pointptr != bubblelist.end())
 		{
 			int bubbleCount = checkBubble(bubblelist, *pointptr);
 		}
@@ -36,6 +36,7 @@ void Shooter::changeColor()
 {
 	delete m_shootingpoint;
 	m_shootingpoint = new Bubble();
+	m_bubblecolor = *m_shootingpoint->getColor();
 };
 
 int Shooter::checkBubble(LinkedList<Bubble>& bubblelist, Bubble& Obj)
@@ -46,7 +47,9 @@ int Shooter::checkBubble(LinkedList<Bubble>& bubblelist, Bubble& Obj)
 
 Shooter::Shooter()
 {
-
+	m_shootingpoint = new Bubble();
+	m_bubblecolor = *m_shootingpoint->getColor();
+	bubbleList.push_back(*m_shootingpoint);
 }
 
 Shooter::~Shooter()

@@ -1,6 +1,22 @@
 #include "GameInterface.h"
+using namespace Interface;
 
-ostream& operator<< (ostream& output, LinkedList<Point> m_point)
+GameInterface::GameInterface()
+{
+	for (int row = 1; row <= SCREEN_HEIGHT; row++)
+	{
+		for (int col = 1;col <= SCREEN_LENGTH; col++)
+		{
+			if ((row == 1)||(row == (SCREEN_HEIGHT))) pointList.push_back(Point(row, col));
+		}
+	}
+}
+
+GameInterface::~GameInterface()
+{
+}
+
+ostream& operator<< (ostream& output, LinkedList<Point>& m_point)
 {
 	for (LinkedList<Point>::Iterator point = m_point.begin();
 		point != m_point.rbegin(); point++)
@@ -12,7 +28,7 @@ ostream& operator<< (ostream& output, LinkedList<Point> m_point)
 
 
 //sort list of Point
-void GameInterface::bubbleSort()
+void GameInterface::bubbleSort(LinkedList<Point> m_point)
 {
 	for (LinkedList<Point>::Iterator iterator1 = m_point.begin();
 		iterator1 != m_point.rbegin(); iterator1++)

@@ -29,6 +29,10 @@ void Bubble::setColor(Interface::COLOR value)
 	m_color = value;
 };
 
+Interface::COLOR Bubble::getColor() const
+{
+	return m_color;
+}
 bool Bubble::operator==(Bubble& Obj)
 {
 	return (*m_bubbleptr == *Obj.m_bubbleptr) && (m_color == Obj.m_color);
