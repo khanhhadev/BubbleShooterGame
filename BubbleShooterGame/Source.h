@@ -5,8 +5,12 @@
 
 void createBubbleRow()
 {
-	for (int i = 0; i < SCREEN_LENGTH; i++)
-		Bubble();
+	while (true)
+	{
+		for (int i = 0; i < SCREEN_LENGTH; i++)
+			Bubble();
+		delay(5);
+	}
 }
 //ham delay thoi gian ma` minh muon
 void delay(int a)
@@ -22,17 +26,6 @@ void delay(int a)
 		add*=i;
 		add++;
 		add++;
-	}
-}
-int main()
-{
-while (true)
-	{
-		for(int i = 0; i < n; i++)
-			{
-				createNewBubbleRow();
-				delay(5);
-			}
 	}
 }
 

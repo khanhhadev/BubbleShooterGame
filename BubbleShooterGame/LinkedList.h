@@ -16,6 +16,8 @@ protected:
 		m_node* m_previous = nullptr;
 		m_node* m_next = nullptr;
 
+		//m_node(T* value) :m_value(value) {};
+
 		//derefrencing operator * overloading
 		T& operator*()
 		{

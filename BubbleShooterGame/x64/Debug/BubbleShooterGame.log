@@ -1,8 +1,7 @@
-﻿  GameInterface.cpp
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(22,21): warning C4309: 'initializing': truncation of constant value
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(31,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
-  Source.cpp
-  Generating Code...
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(55): warning C4172: returning address of local variable or temporary: iterator
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(68): warning C4172: returning address of local variable or temporary: iterator
+﻿  Point.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(37,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(46,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\mylib.h(31,26): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\mylib.h(31,29): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(83,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   BubbleShooterGame.vcxproj -> D:\C++\Code\TestCplusplus\BubbleShooterGame\x64\Debug\BubbleShooterGame.exe

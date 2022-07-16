@@ -1,38 +1,46 @@
 #include "Point.h"
+#include "mylib.h"
 #include <math.h>
-
-//convert from string to integer
-int toInt(const string& s)
-{
-	int Result = 0;
-	int n = s.length();
-	int con = (s[0] == '-') ? -1 : 1;
-	int i = (con == -1) ? 1 : 0;
-	for (; i < n; i++)
-	{
-		Result *= pow(10, i - ((con == -1) ? 1 : 0));
-		Result += s[i] - '0';
-	}
-	Result *= con;
-	return Result;
-}
 
 //default constructor
 Point::Point()
 {
+
+};
+Point::Point(int x, int y, CHARACTER mychar):m_x(x), m_y(y), m_char(mychar), m_color(BLACK)
+{
+	draw();
+}
+Point::Point(int x, int y, CHARACTER mychar, COLOR color):m_x(x), m_y(y), m_char(mychar), m_color(color)
+{
+	draw();
+
 };
 
-Point::Point(int x, int y):m_x(x), m_y(y)
+Point::~Point()
 {
-
 };
 
 //copy constructor
-Point::Point(Point& p):m_x(p.m_x), m_y(p.m_y)
+Point::Point(Point& p):m_x(p.m_x), m_y(p.m_y),m_color(p.m_color), m_char(p.m_char)
 {
-
+	draw();
 };
 
+void Point::draw()
+{
+	SetColor(m_color);
+	gotoXY(m_y, m_x);
+	cout << (char)m_char;
+	gotoXY(0, 16);
+};
+
+void Point::erase()
+{
+	gotoXY(m_y, m_x);
+	cout << (char)ERASER;
+	gotoXY(0, 16);
+};
 //return m_x value of Point object
 int Point::getX() const
 {
@@ -44,6 +52,11 @@ int Point::getY() const
 {
 	return m_y;
 };
+
+COLOR Point::getColor() const
+{
+	return m_color;
+}
 
 //set value for m_x of Point object
 void Point::setX(int value)
@@ -82,23 +95,24 @@ void Point::swap(Point& p1, Point& p2)
 	p2 = temp;
 };
 
-//addition operator + oveloading 
-Point& Point::operator= (Point& p)
-{
-	m_x = m_x + p.m_x;
-	m_y = m_y + p.m_y;
-	return *this;
-};
-
-//addition operator + oveloading 
+//assignment operator = oveloading 
 Point& Point::operator= (const Point& p)
 {
-	m_x = m_x + p.m_x;
-	m_y = m_y + p.m_y;
+	m_x = p.m_x;
+	m_y = p.m_y;
 	return *this;
 };
 
-//addition operator + oveloading 
+//assignment operator = oveloading 
+Point& Point::operator= (Point& p)
+{
+	m_x = p.m_x;
+	m_y = p.m_y;
+	return *this;
+};
+
+
+//addition operator + overloading  
 Point Point::operator+ (Point& p)
 {
 	Point Result;

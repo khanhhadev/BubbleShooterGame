@@ -5,20 +5,22 @@
 #include "Bubble.h"
 #include "LinkedList.h"
 
+
 class Shooter
 {
 public:
-	Bubble* m_shootingpoint;
-	float m_shootingangle;
-	COLOR m_bubblecolor;
-	//refrence to list of Point belonging to Shooter
-	//Point* m_shooterptr;
-private:
 	void changeColor();
 	int score(int timeconst, int num);
 	void shooting(LinkedList<Bubble>& bubblelist, int y);
-	int checkBubble(LinkedList<Bubble>& bubblelist, Bubble&);
+	void checkBubble(LinkedList<Bubble>& bubblelist, int row, int col, int& count);
 	Shooter();
 	~Shooter();
+private:
+	Bubble* m_shootingpoint;
+	COLOR m_bubblecolor;
+	int m_score = 0;
+	//float m_shootingangle;
+	//refrence to list of Point belonging to Shooter
+	//Point* m_shooterptr;
 };
 #endif

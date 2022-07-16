@@ -1,16 +1,35 @@
 #include "GameInterface.h"
+//#include "mylib.h"
 
+extern LinkedList<Bubble> bubbleList;
 extern LinkedList<Point> pointList;
 
 GameInterface::GameInterface()
 {
-	for (int row = 1; row <= SCREEN_HEIGHT; row++)
+	for (int row = SCREEN_ROW_BEGIN; row <= SCREEN_ROW_END; row++)
 	{
-		for (int col = 1;col <= SCREEN_LENGTH; col++)
+		for (int col = SCREEN_COLUMN_BEGIN; col <= SCREEN_COLUMN_END; col++)
 		{
-			if ((row == 1)||(row == (SCREEN_HEIGHT))) pointList.push_back(Point(row, col));
-			else if ((col == 1) || (col == (SCREEN_LENGTH))) pointList.push_back(Point(row, col));
+			if ((col == SCREEN_COLUMN_BEGIN) || (col == (SCREEN_COLUMN_END)))
+			{
+				pointList.push_back(Point(row, col, VERTICAL));
+			}
+			//else
+				if ((row == SCREEN_ROW_BEGIN) || (row == (SCREEN_ROW_END)))
+				{
+					//Point* temp = new Point(row, col, HORIZONTAL);
+					pointList.push_back(Point(row, col, HORIZONTAL));
+				}
 		}
+	}
+	Shooter temp = Shooter();
+
+	srand((int)time(0));
+	for (int col = BUBBLE_COLUMN_BEGIN; col <= BUBBLE_COLUMN_END; col++)
+	{
+		Bubble temp(2, col);
+		temp.down();
+		//bubbleList.push_back(temp);
 	}
 }
 

@@ -132,6 +132,7 @@
     <ClInclude Include="General.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="mylib.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Shooter.h" />
     <ClInclude Include="Source.h" />
