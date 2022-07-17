@@ -1,7 +1,5 @@
-﻿  GameInterface.cpp
+﻿  Shooter.cpp
 D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(37,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
 D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(46,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(57): warning C4172: returning address of local variable or temporary: iterator
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(70): warning C4172: returning address of local variable or temporary: iterator
 D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(57): warning C4172: returning address of local variable or temporary: iterator
   BubbleShooterGame.vcxproj -> D:\C++\Code\TestCplusplus\BubbleShooterGame\x64\Debug\BubbleShooterGame.exe

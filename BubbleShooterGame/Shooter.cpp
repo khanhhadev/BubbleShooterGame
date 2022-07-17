@@ -31,8 +31,9 @@ void Shooter::checkBubble(LinkedList<Bubble>& templist, Bubble& temp,int row, in
 
 	if (pointptr != bubbleList.end())
 	{
-		templist.push_back(Bubble(tmp1));
-		bubbleList.remove(pointptr);
+		/*templist.push_back(Bubble(tmp1));
+		bubbleList.remove(pointptr);*/
+		bubbleList.move(templist, pointptr);
 		count++;
 
 		checkBubble(templist, temp, row + 1, col, count);
@@ -87,6 +88,26 @@ void Shooter::shooting()
 				m_score += score(1, count);
 				LinkedList<Bubble>::Iterator pointptr = templist.begin();
 
+				while (templist.begin() != templist.end())
+				{
+					(templist.pop_front()).eraser();
+				}
+			}
+			else
+			{
+				LinkedList<Bubble>::Iterator pointptr = templist.begin();
+
+				for (; pointptr != templist.end(); pointptr++)
+				{
+					templist.move(bubbleList, pointptr);
+				}
+			}
+
+			/*if (count >= 3)
+			{
+				m_score += score(1, count);
+				LinkedList<Bubble>::Iterator pointptr = templist.begin();
+
 				for (; pointptr != templist.end(); pointptr++)
 				{
 					(* pointptr).eraser();
@@ -101,7 +122,7 @@ void Shooter::shooting()
 					Bubble tmp(*(templist.begin()));
 					bubbleList.push_back(tmp);
 				}
-			}
+			}*/
 
 			/*
 			if (count >= 3)

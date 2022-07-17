@@ -147,25 +147,57 @@ public:
 		friend class LinkedList;
 	};
 
+	void move(LinkedList<T>& list, Iterator itr)
+	{
+		if (m_size != 0)
+		{
+			if (m_size != 1)
+			{
+				if ((itr.m_nodeptr) == m_head)
+				{
+					(itr.m_nodeptr)->m_next->m_previous = nullptr;
+					m_head = m_head->m_next;
+				}
+				else if ((itr.m_nodeptr) == m_tail)
+				{
+					(itr.m_nodeptr)->m_previous->m_next = nullptr;
+					m_tail = (itr.m_nodeptr)->m_previous;
+				}
+				else
+				{
+					(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
+				}
+			}
+			m_size--;
+			list.push_back(*itr);
+		}
+	}
+
 	//remove element from container
 	void remove(Iterator itr)
 	{
-		if ((itr.m_nodeptr) == m_head)
+		if (m_size != 0)
 		{
-			(itr.m_nodeptr)->m_next->m_previous = nullptr;
-			m_head = m_head->m_next;
+			if (m_size != 1)
+			{
+				if ((itr.m_nodeptr) == m_head)
+				{
+					(itr.m_nodeptr)->m_next->m_previous = nullptr;
+					m_head = m_head->m_next;
+				}
+				else if ((itr.m_nodeptr) == m_tail)
+				{
+					(itr.m_nodeptr)->m_previous->m_next = nullptr;
+					m_tail = (itr.m_nodeptr)->m_previous;
+				}
+				else
+				{
+					(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
+				}
+			}
+			delete itr.m_nodeptr;
+			m_size--;
 		}
-		else if ((itr.m_nodeptr) == m_tail)
-		{
-			(itr.m_nodeptr)->m_previous->m_next = nullptr;
-			m_tail = (itr.m_nodeptr)->m_previous;
-		}
-		else
-		{
-			(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
-		}
-		delete itr.m_nodeptr;
-		m_size--;
 	};
 
 	//remove first element from container
