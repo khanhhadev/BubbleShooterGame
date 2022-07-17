@@ -9,6 +9,8 @@ public:
 	void fall();
 	void setColor(COLOR);
 	COLOR getColor() const;
+	int getX() const;
+	int getY() const;
 	Point& getXY() const;
 	void up();
 	void down();
@@ -22,6 +24,7 @@ public:
 	Bubble(int x, int y);
 	Bubble(int x, int y, COLOR);
 	Bubble(Bubble& Obj);
+
 	~Bubble();
 
 	bool operator==(Bubble& Obj);

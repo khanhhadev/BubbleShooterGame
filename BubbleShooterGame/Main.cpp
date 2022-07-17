@@ -10,7 +10,7 @@ int main()
 {
 	GameInterface MyGame;
 	thread newone = thread(std::bind(&GameInterface::createBubble, &MyGame));
-	thread new2 = thread(shooter);
+	thread new2 = thread(&shooter);
 	newone.join();
 	new2.join();
 	_getch();

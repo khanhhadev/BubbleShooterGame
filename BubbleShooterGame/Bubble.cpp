@@ -38,7 +38,7 @@ Bubble::Bubble(int x, int y, COLOR color)
 
 Bubble::Bubble(Bubble& Obj):m_color(Obj.m_color)
 {
-	m_bubbleptr = new Point(*Obj.m_bubbleptr);
+	m_bubbleptr = new Point(Obj.m_bubbleptr->getX(), Obj.m_bubbleptr->getY(),BUBBLE, Obj.m_bubbleptr->getColor());
 };
 
 Bubble::~Bubble()
@@ -61,6 +61,16 @@ COLOR Bubble::getColor() const
 {
 	return m_color;
 }
+
+int Bubble::getX() const
+{
+	return m_bubbleptr->getX();
+};
+
+int Bubble::getY() const
+{
+	return m_bubbleptr->getY();
+};
 
 Point& Bubble::getXY() const
 {

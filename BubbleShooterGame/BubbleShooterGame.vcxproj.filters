@@ -15,9 +15,6 @@
     <Filter Include="Bubble">
       <UniqueIdentifier>{e8bdac3e-ad9d-4bda-b8a5-7d8ba14f9e8d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Line">
-      <UniqueIdentifier>{30b60cd7-a5b4-41ec-9e9b-3cb95e11f1db}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shooter">
       <UniqueIdentifier>{b570acdc-76e2-4480-b584-0766bffd4211}</UniqueIdentifier>
     </Filter>
@@ -37,9 +34,6 @@
   <ItemGroup>
     <ClInclude Include="GameInterface.h">
       <Filter>GameInterface</Filter>
-    </ClInclude>
-    <ClInclude Include="Line.h">
-      <Filter>Line</Filter>
     </ClInclude>
     <ClInclude Include="Shooter.h">
       <Filter>Shooter</Filter>
@@ -70,9 +64,6 @@
     </ClCompile>
     <ClCompile Include="Bubble.cpp">
       <Filter>Bubble</Filter>
-    </ClCompile>
-    <ClCompile Include="Line.cpp">
-      <Filter>Line</Filter>
     </ClCompile>
     <ClCompile Include="Shooter.cpp">
       <Filter>Shooter</Filter>

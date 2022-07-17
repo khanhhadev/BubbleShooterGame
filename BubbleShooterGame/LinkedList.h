@@ -150,14 +150,22 @@ public:
 	//remove element from container
 	void remove(Iterator itr)
 	{
-		if ((itr.m_nodeptr)->m_previous == nullptr) pop_front();
-		else if ((itr.m_nodeptr)->m_next == nullptr) pop_back();
+		if ((itr.m_nodeptr) == m_head)
+		{
+			(itr.m_nodeptr)->m_next->m_previous = nullptr;
+			m_head = m_head->m_next;
+		}
+		else if ((itr.m_nodeptr) == m_tail)
+		{
+			(itr.m_nodeptr)->m_previous->m_next = nullptr;
+			m_tail = (itr.m_nodeptr)->m_previous;
+		}
 		else
 		{
 			(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
-			delete itr.m_nodeptr;
-			m_size--;
 		}
+		delete itr.m_nodeptr;
+		m_size--;
 	};
 
 	//remove first element from container

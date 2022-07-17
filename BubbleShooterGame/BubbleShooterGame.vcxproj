@@ -131,7 +131,6 @@
     <ClInclude Include="GameInterface.h" />
     <ClInclude Include="General.h" />
     <ClInclude Include="graphic.h" />
-    <ClInclude Include="Line.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="mylib.h" />
     <ClInclude Include="Point.h" />
@@ -141,7 +140,6 @@
   <ItemGroup>
     <ClCompile Include="Bubble.cpp" />
     <ClCompile Include="GameInterface.cpp" />
-    <ClCompile Include="Line.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Shooter.cpp" />

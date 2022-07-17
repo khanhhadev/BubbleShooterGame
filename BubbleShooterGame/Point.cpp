@@ -19,9 +19,8 @@ Point::~Point()
 };
 
 //copy constructor
-Point::Point(Point& p):m_x(p.m_x), m_y(p.m_y),m_color(p.m_color), m_char(p.m_char)
-{
-};
+Point::Point(Point& p):m_x(p.m_x), m_y(p.m_y), m_color(p.m_color), m_char(p.m_char)
+{};
 
 void Point::draw()
 {
