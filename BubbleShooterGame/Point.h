@@ -95,5 +95,7 @@ public:
 	bool operator<= (Point& p);
 
 	bool operator== (Point& p);
+
+	bool operator== (const Point& p);
 };
 #endif

@@ -130,6 +130,7 @@
     <ClInclude Include="Bubble.h" />
     <ClInclude Include="GameInterface.h" />
     <ClInclude Include="General.h" />
+    <ClInclude Include="graphic.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="mylib.h" />

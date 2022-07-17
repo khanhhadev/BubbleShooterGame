@@ -83,4 +83,14 @@ void textcolor(int x)
 	SetConsoleTextAttribute(mau, x);
 }
 
+// set size console
+void SetScreen(int x, int y) {
+	HANDLE cons = GetStdHandle(STD_OUTPUT_HANDLE);
+	PCONSOLE_FONT_INFOEX font = new CONSOLE_FONT_INFOEX();
+	font->cbSize = sizeof(CONSOLE_FONT_INFOEX);
+	GetCurrentConsoleFontEx(cons, 0, font);
+	font->dwFontSize.X = x;
+	font->dwFontSize.Y = y;
+	SetCurrentConsoleFontEx(cons, 0, font);
+}
 #endif // !MYLIB_H

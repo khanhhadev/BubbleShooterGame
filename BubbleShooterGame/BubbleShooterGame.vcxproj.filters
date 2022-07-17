@@ -62,6 +62,7 @@
     <ClInclude Include="Bubble.h">
       <Filter>Bubble</Filter>
     </ClInclude>
+    <ClInclude Include="graphic.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">

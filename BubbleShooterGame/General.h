@@ -24,7 +24,7 @@ using namespace std;
 
 	//const int BUBBLE_RADIUS = 1;
 	const int BUBBLE_ROW_BEGIN = 2;
-	const int BUBBLE_ROW_END = 9;
+	const int BUBBLE_ROW_END = 14;
 
 	const int BUBBLE_COLUMN_BEGIN = 31;
 	const int BUBBLE_COLUMN_END = 44;

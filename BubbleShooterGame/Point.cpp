@@ -9,12 +9,9 @@ Point::Point()
 };
 Point::Point(int x, int y, CHARACTER mychar):m_x(x), m_y(y), m_char(mychar), m_color(BLACK)
 {
-	draw();
 }
 Point::Point(int x, int y, CHARACTER mychar, COLOR color):m_x(x), m_y(y), m_char(mychar), m_color(color)
 {
-	draw();
-
 };
 
 Point::~Point()
@@ -24,7 +21,6 @@ Point::~Point()
 //copy constructor
 Point::Point(Point& p):m_x(p.m_x), m_y(p.m_y),m_color(p.m_color), m_char(p.m_char)
 {
-	draw();
 };
 
 void Point::draw()
@@ -204,4 +200,9 @@ bool Point::operator< (Point& p)
 bool Point::operator== (Point& p)
 {
 	return ((m_x == p.m_x)&& (m_y == p.m_y));
+};
+
+bool Point::operator== (const Point& p)
+{
+	return ((m_x == p.m_x) && (m_y == p.m_y));
 };

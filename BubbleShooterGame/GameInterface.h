@@ -14,8 +14,7 @@ public:
 	GameInterface();
 	~GameInterface();
 
-private:
-	//int m_count;
+	void createBubble();
 	void bubbleSort(LinkedList<Point> m_point);
 	friend ostream& operator<< (ostream& output, LinkedList<Point>& m_point);
 };

@@ -150,9 +150,14 @@ public:
 	//remove element from container
 	void remove(Iterator itr)
 	{
-		(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
-		delete itr.m_nodeptr;
-		m_size--;
+		if ((itr.m_nodeptr)->m_previous == nullptr) pop_front();
+		else if ((itr.m_nodeptr)->m_next == nullptr) pop_back();
+		else
+		{
+			(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
+			delete itr.m_nodeptr;
+			m_size--;
+		}
 	};
 
 	//remove first element from container

@@ -10,9 +10,13 @@ class Shooter
 {
 public:
 	void changeColor();
+	void left();
+	void right();
+	void draw();
+	void eraser();
 	int score(int timeconst, int num);
-	void shooting(LinkedList<Bubble>& bubblelist, int y);
-	void checkBubble(LinkedList<Bubble>& bubblelist, int row, int col, int& count);
+	void shooting();
+	void checkBubble(LinkedList<Bubble>& templist, Bubble& temp, int row, int col, int& count);
 	Shooter();
 	~Shooter();
 private:

@@ -1,31 +1,38 @@
 #pragma once
-#include <thread>
 #include "Bubble.h"
 #include "General.h"
+#include "LinkedList.h"
+#include "Point.h"
+#include "GameInterface.h"
+#include <iostream>
+#include <thread>
+#include <functional>
+#include <conio.h>
 
-void createBubbleRow()
-{
-	while (true)
-	{
-		for (int i = 0; i < SCREEN_LENGTH; i++)
-			Bubble();
-		delay(5);
-	}
+#define KEY_LEFT 75
+#define KEY_RIGHT 77
+#define KEY_X 120
+#define KEY_UP 72
+
+extern Shooter myShooter;
+void shooter() {
+	//int i = 38;
+	int value;
+	do {
+		char key = _getch();
+		value = key;
+		switch (_getch()) {
+
+		case KEY_UP:
+			myShooter.shooting();
+			break;
+		case KEY_LEFT:
+			myShooter.left();
+			break;
+		case KEY_RIGHT:
+			myShooter.right();
+			break;
+		}
+	} while (value != KEY_X);
+
 }
-//ham delay thoi gian ma` minh muon
-void delay(int a)
-{
-	int add;
-	int time;
-	int i;
-
-// dieu chinh thoi gian delay o ben duoi
-	time = a*1000000000;
-	for (i = 0; i < time; i++)
-	{
-		add*=i;
-		add++;
-		add++;
-	}
-}
-

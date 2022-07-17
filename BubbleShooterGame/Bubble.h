@@ -10,10 +10,15 @@ public:
 	void setColor(COLOR);
 	COLOR getColor() const;
 	Point& getXY() const;
+	void up();
 	void down();
-
+	void left();
+	void right();
+	void draw();
+	void eraser();
 	Bubble();
 	Bubble(Point& P);
+	Bubble(Point& P, COLOR);
 	Bubble(int x, int y);
 	Bubble(int x, int y, COLOR);
 	Bubble(Bubble& Obj);
@@ -21,6 +26,7 @@ public:
 
 	bool operator==(Bubble& Obj);
 	bool operator==(const Bubble& Obj);
+	bool operator==(const Point& Obj);
 	//assignment operator = oveloading
 	Bubble& operator= (Bubble& Obj);
 	//assignment operator = oveloading
