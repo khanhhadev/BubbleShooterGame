@@ -4,7 +4,7 @@
 #include "General.h"
 #include "Bubble.h"
 #include "LinkedList.h"
-
+#include <Windows.h>
 
 class Shooter
 {
@@ -15,6 +15,7 @@ public:
 	void draw();
 	void eraser();
 	int score(int timeconst, int num);
+	void shootercontrol();
 	void shooting();
 	void checkBubble(LinkedList<Bubble>& templist, COLOR maincolor, int row, int col, int& count);
 	Shooter();

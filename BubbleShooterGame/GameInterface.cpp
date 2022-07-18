@@ -1,51 +1,35 @@
 #include "GameInterface.h"
 #include <time.h>
 #include <Windows.h>
-//#include "Graphic.h"
+#include "Display.h"
+
+extern PLAYMODE myplay;
+extern MODE mymode;
 extern LinkedList<Bubble> bubbleList;
-extern LinkedList<Point> pointList;
-extern Shooter myShooter;
-extern bool shootingCheck;
 
-void SetScreen(int x, int y);
-void hidecursor(void);
+//void SetScreen(int x, int y);
+//void hidecursor(void);
 //delay function
-void delay(int a)
-{
-	int add = 0;
-	int time;
-	int i;
+//void delay(int a)
+//{
+//	int add = 0;
+//	int time;
+//	int i;
+//
+//	// delay time increasing speed changing
+//	time = a * 1000000;
+//	for (i = 0; i < time; i++)
+//	{
+//		add *= i;
+//		add++;
+//		add++;
+//	}
+//}
 
-	// delay time increasing speed changing
-	time = a * 1000000;
-	for (i = 0; i < time; i++)
-	{
-		add *= i;
-		add++;
-		add++;
-	}
-}
 GameInterface::GameInterface()
 {
-	for (int row = SCREEN_ROW_BEGIN; row <= SCREEN_ROW_END; row++)
-	{
-		for (int col = SCREEN_COLUMN_BEGIN; col <= SCREEN_COLUMN_END; col++)
-		{
-			if ((col == SCREEN_COLUMN_BEGIN) || (col == (SCREEN_COLUMN_END)))
-			{
-				Point temp(row, col, VERTICAL);
-				temp.draw();
-			}
-			if ((row == SCREEN_ROW_BEGIN) || (row == (SCREEN_ROW_END)))
-			{
-				Point temp(row, col, HORIZONTAL);
-				temp.draw();
-			}
-		}
-	}
-
-	//initailize shooter object
-	myShooter = Shooter();
+	hidecursor();
+	drawWall();
 }
 
 GameInterface::~GameInterface()
@@ -59,9 +43,10 @@ void GameInterface::createBubble()
 	int timecon = 5000; //ms
 	while (true)
 	{
-		while (shootingCheck) {};
+		//while (myplay == SHOOTING) {};
+		myplay = CREATING;
 		//srand((int)time(0));
-		if (timecon > 2000) timecon -= 100;
+		if (timecon > 1000) timecon -= 100;
 		for (LinkedList<Bubble>::Iterator iterator = bubbleList.begin();
 			iterator != bubbleList.end(); iterator++)
 		{
@@ -72,7 +57,9 @@ void GameInterface::createBubble()
 			Bubble temp(2, col);
 			temp.draw();
 			bubbleList.push_back(temp);
+			//delete temp;
 		}
+		myplay = NOTHING;
 		Sleep(timecon);
 	}
 };
@@ -90,7 +77,7 @@ ostream& operator<< (ostream& output, LinkedList<Point>& m_point)
 
 
 //sort list of Point
-void GameInterface::bubbleSort(LinkedList<Bubble> list)
+void GameInterface::bubbleSort(LinkedList<Bubble>& list)
 {
 	for (LinkedList<Bubble>::Iterator iterator1 = list.begin();
 		iterator1 != list.rbegin(); iterator1++)

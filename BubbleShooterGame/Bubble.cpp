@@ -1,7 +1,5 @@
 #include "Bubble.h"
 
-extern LinkedList<Bubble> bubbleList;
-extern LinkedList<Point> pointList;
 Bubble::Bubble()
 {
 

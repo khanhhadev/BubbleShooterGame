@@ -33,14 +33,12 @@ Point::Point(Point& p):m_x(p.m_x), m_y(p.m_y), m_color(p.m_color), m_char(p.m_ch
 
 void Point::draw()
 {
-	SetColor(m_color);
-	gotoXY(m_y, m_x, (char)m_char);
+	gotoXY(m_y, m_x, (char)m_char, m_color);
 };
 
 void Point::erase()
 {
-	SetColor(m_color);
-	gotoXY(m_y, m_x, (char)ERASER);
+	gotoXY(m_y, m_x, (char)ERASER, m_color);
 	//gotoXY(0, 16);
 };
 //return m_x value of Point object

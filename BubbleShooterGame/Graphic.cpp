@@ -1,11 +1,11 @@
 #include "Graphic.h"
 
-
+std::mutex A;
 //dich con tro hien tai den toa do xy(x,y)
-void gotoXY(int x, int y, char a)
+void gotoXY(int x, int y, char a, WORD color)
 {
-	std::mutex;
-	std::lock_guard<mutex> lock(A);
+	std::lock_guard<std::mutex> lock(A);	
+	SetColor(color);
 	HANDLE hConsoleOutput;
 	COORD Cursor_an_Pos = { x, y };
 	hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -28,7 +28,6 @@ void SetColor(WORD color)
 
 	SetConsoleTextAttribute(hConsoleOutput, wAttributes);
 }
-#endif // DEBUG
 
 // set size console
 void SetScreen(int x, int y) {

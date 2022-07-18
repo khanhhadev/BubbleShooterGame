@@ -1,40 +1,50 @@
 #pragma once
-#include "Bubble.h"
 #include "General.h"
 #include "LinkedList.h"
-#include "Point.h"
 #include "GameInterface.h"
 #include <iostream>
 #include <thread>
 #include <functional>
 #include <conio.h>
 
-#define KEY_LEFT 75
-#define KEY_RIGHT 77
-#define KEY_X 120
-#define KEY_UP 72
+MODE mymode = WAIT;
+PLAYMODE myplay;
+LinkedList<Bubble> bubbleList;
 
-extern Shooter myShooter;
-void shooter() {
-	int value;
+//game mode navigation
+void navigation()
+{
+	int key_input;
 	do {
+		hidecursor();
+		startGame();
 		char key = _getch();
-		value = key;
+		key_input = key;
 		switch (_getch()) {
-
-		case KEY_UP:
-			myShooter.shooting();
-			myShooter.changeColor();
+		case KEY_SPACE:
+		{
+			mymode = PLAY;
+			myplay = NOTHING;
+			clrscr();
+			Shooter myShooter;
+			GameInterface myGame;
+			drawDScore();
+			displayScore(0);
+			thread newone = thread(std::bind(&GameInterface::createBubble, &myGame));
+			thread new2 = thread(std::bind(&Shooter::shootercontrol, &myShooter));
+			newone.join();
+			new2.join();
+			while (mymode == PLAY) {
+			
+			};
+		}
 			break;
-		case KEY_LEFT:
-			myShooter.left();
-			break;
-		case KEY_RIGHT:
-			myShooter.right();
-			break; 
 		case KEY_X:
 			return;
 			break;
+		default:
+			break;
 		}
 	} while (true);
+
 }

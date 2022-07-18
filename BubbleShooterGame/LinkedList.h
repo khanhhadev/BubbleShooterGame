@@ -168,9 +168,9 @@ public:
 					(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
 				}
 			}
+			else { m_head = m_tail = nullptr; }
 			m_size--;
 			list.push_back(*itr);
-			m_head = m_tail = nullptr;
 		}
 	}
 

@@ -8,7 +8,15 @@ using namespace std;
 #pragma once
 //namespace Interface
 //{
+	#define MAX 300
+	#define KEY_UP 72
+	#define KEY_LEFT 75
+	#define KEY_RIGHT 77
+	#define KEY_X 120
+	#define KEY_SPACE 32
+	#define KEY_ESC 27
 	//const int SCREEN_WIDTH = 15;
+
 	const int SCREEN_LENGTH = 15;
 	const int SCREEN_HEIGHT = 14;
 
@@ -38,7 +46,17 @@ using namespace std;
 		HASHTAG = '#'
 	};
 
+	typedef enum MODE {
+		PLAY,
+		WAIT,
+		LOSE
+	};
 
+	typedef enum PLAYMODE {
+		SHOOTING,
+		CREATING,
+		NOTHING
+	};
 	typedef enum COLOR {
 		BLACK = 7,
 		RED = 12,
@@ -46,6 +64,7 @@ using namespace std;
 		YELLOW = 14,
 		WHITE = 7
 	};
+
 //};
 
 #endif // !GENERAL_H

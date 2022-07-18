@@ -30,6 +30,12 @@
     <Filter Include="General">
       <UniqueIdentifier>{745bb0c5-6933-492b-a9ee-61d1bb99911b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Display">
+      <UniqueIdentifier>{8a9e063e-6c97-4262-88a8-3144cd5ebf2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{0365f56f-740f-4827-bdc1-4fbd70e7b895}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameInterface.h">
@@ -56,8 +62,12 @@
     <ClInclude Include="Bubble.h">
       <Filter>Bubble</Filter>
     </ClInclude>
-    <ClInclude Include="Graphic.h" />
-    <ClInclude Include="Display.h" />
+    <ClInclude Include="Display.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp">
@@ -78,7 +88,11 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Display.cpp" />
-    <ClCompile Include="Graphic.cpp" />
+    <ClCompile Include="Display.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
