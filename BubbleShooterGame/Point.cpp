@@ -1,6 +1,9 @@
 #include "Point.h"
-#include "mylib.h"
+#include <atomic>
 #include <math.h>
+#include <mutex>
+#include <thread>
+#include "Graphic.h"
 
 //default constructor
 Point::Point()
@@ -9,32 +12,36 @@ Point::Point()
 };
 Point::Point(int x, int y, CHARACTER mychar):m_x(x), m_y(y), m_char(mychar), m_color(BLACK)
 {
+
 }
+
 Point::Point(int x, int y, CHARACTER mychar, COLOR color):m_x(x), m_y(y), m_char(mychar), m_color(color)
 {
+
 };
 
 Point::~Point()
 {
+
 };
 
 //copy constructor
 Point::Point(Point& p):m_x(p.m_x), m_y(p.m_y), m_color(p.m_color), m_char(p.m_char)
-{};
+{
+
+};
 
 void Point::draw()
 {
 	SetColor(m_color);
-	gotoXY(m_y, m_x);
-	cout << (char)m_char;
-	gotoXY(0, 16);
+	gotoXY(m_y, m_x, (char)m_char);
 };
 
 void Point::erase()
 {
-	gotoXY(m_y, m_x);
-	cout << (char)ERASER;
-	gotoXY(0, 16);
+	SetColor(m_color);
+	gotoXY(m_y, m_x, (char)ERASER);
+	//gotoXY(0, 16);
 };
 //return m_x value of Point object
 int Point::getX() const

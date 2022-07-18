@@ -1,16 +1,22 @@
 #include "GameInterface.h"
-
+#include <time.h>
+#include <Windows.h>
+//#include "Graphic.h"
 extern LinkedList<Bubble> bubbleList;
 extern LinkedList<Point> pointList;
 extern Shooter myShooter;
-//ham delay thoi gian ma` minh muon
+extern bool shootingCheck;
+
+void SetScreen(int x, int y);
+void hidecursor(void);
+//delay function
 void delay(int a)
 {
 	int add = 0;
 	int time;
 	int i;
 
-	// dieu chinh thoi gian delay o ben duoi
+	// delay time increasing speed changing
 	time = a * 1000000;
 	for (i = 0; i < time; i++)
 	{
@@ -30,16 +36,16 @@ GameInterface::GameInterface()
 				Point temp(row, col, VERTICAL);
 				temp.draw();
 			}
-			//else
-				if ((row == SCREEN_ROW_BEGIN) || (row == (SCREEN_ROW_END)))
-				{
-					Point temp(row, col, HORIZONTAL);
-					temp.draw();
-				}
+			if ((row == SCREEN_ROW_BEGIN) || (row == (SCREEN_ROW_END)))
+			{
+				Point temp(row, col, HORIZONTAL);
+				temp.draw();
+			}
 		}
 	}
+
+	//initailize shooter object
 	myShooter = Shooter();
-	myShooter.draw();
 }
 
 GameInterface::~GameInterface()
@@ -53,8 +59,9 @@ void GameInterface::createBubble()
 	int timecon = 5000; //ms
 	while (true)
 	{
-		//if (timecon > 2000) timecon -= 100;
-		srand((int)time(0));
+		while (shootingCheck) {};
+		//srand((int)time(0));
+		if (timecon > 2000) timecon -= 100;
 		for (LinkedList<Bubble>::Iterator iterator = bubbleList.begin();
 			iterator != bubbleList.end(); iterator++)
 		{
@@ -66,9 +73,10 @@ void GameInterface::createBubble()
 			temp.draw();
 			bubbleList.push_back(temp);
 		}
-		delay(timecon);
+		Sleep(timecon);
 	}
 };
+
 ostream& operator<< (ostream& output, LinkedList<Point>& m_point)
 {
 	for (LinkedList<Point>::Iterator point = m_point.begin();
@@ -82,15 +90,15 @@ ostream& operator<< (ostream& output, LinkedList<Point>& m_point)
 
 
 //sort list of Point
-void GameInterface::bubbleSort(LinkedList<Point> m_point)
+void GameInterface::bubbleSort(LinkedList<Bubble> list)
 {
-	for (LinkedList<Point>::Iterator iterator1 = m_point.begin();
-		iterator1 != m_point.rbegin(); iterator1++)
+	for (LinkedList<Bubble>::Iterator iterator1 = list.begin();
+		iterator1 != list.rbegin(); iterator1++)
 	{
-		for (LinkedList<Point>::Iterator iterator2 = iterator1 + 1;
-			iterator2 != m_point.end(); iterator2++)
+		for (LinkedList<Bubble>::Iterator iterator2 = iterator1 + 1;
+			iterator2 != list.end(); iterator2++)
 		{
-			if (*iterator1 > *iterator2) Point::swap(*iterator1, *iterator2);
+			if (*iterator1 < *iterator2) Bubble::swap(*iterator1, *iterator2);
 		}
 	}
 }

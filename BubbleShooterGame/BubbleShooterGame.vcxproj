@@ -128,9 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Bubble.h" />
+    <ClInclude Include="Display.h" />
     <ClInclude Include="GameInterface.h" />
     <ClInclude Include="General.h" />
-    <ClInclude Include="graphic.h" />
+    <ClInclude Include="Graphic.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="mylib.h" />
     <ClInclude Include="Point.h" />
@@ -140,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="Bubble.cpp" />
     <ClCompile Include="GameInterface.cpp" />
+    <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Shooter.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Display.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

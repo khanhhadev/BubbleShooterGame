@@ -1,6 +1,7 @@
 #include "Shooter.h"
 extern LinkedList<Bubble> bubbleList;
 extern LinkedList<Point> pointList;
+extern bool shootingCheck;
 
 int Shooter::score(int timeconst, int num)
 // num = so luong bong
@@ -16,7 +17,7 @@ int Shooter::score(int timeconst, int num)
 	return m_score;
 }
 
-void Shooter::checkBubble(LinkedList<Bubble>& templist, Bubble& temp,int row, int col, int& count)
+void Shooter::checkBubble(LinkedList<Bubble>& templist, COLOR maincolor,int row, int col, int& count)
 {
 	if ((row < BUBBLE_ROW_BEGIN) || (row > BUBBLE_ROW_END) || (col < BUBBLE_COLUMN_BEGIN) || (col > BUBBLE_COLUMN_END)) return;
 
@@ -25,7 +26,7 @@ void Shooter::checkBubble(LinkedList<Bubble>& templist, Bubble& temp,int row, in
 	for (; pointptr != bubbleList.end(); pointptr++)
 	{
 		tmp1 = (*pointptr);
-		Bubble tmp2(row, col, temp.getColor());
+		Bubble tmp2(row, col, maincolor);
 		if (tmp1 == tmp2) break;
 	}
 
@@ -36,36 +37,34 @@ void Shooter::checkBubble(LinkedList<Bubble>& templist, Bubble& temp,int row, in
 		bubbleList.move(templist, pointptr);
 		count++;
 
-		checkBubble(templist, temp, row + 1, col, count);
-		checkBubble(templist, temp, row - 1, col, count);
-		checkBubble(templist, temp, row, col + 1, count);
-		checkBubble(templist, temp, row, col - 1, count);
+		checkBubble(templist, maincolor, row + 1, col, count);
+		checkBubble(templist, maincolor, row - 1, col, count);
+		checkBubble(templist, maincolor, row, col + 1, count);
+		checkBubble(templist, maincolor, row, col - 1, count);
 	}
 	return;
 };
 
 void Shooter::shooting()
 {
-	Bubble temp(m_shootingpoint->getXY(), m_shootingpoint->getColor());
+	shootingCheck = true;
+	Bubble temp(m_shootingpoint->getX(), m_shootingpoint->getY(), m_shootingpoint->getColor());
 
 	//shooter changes color after shot
-	this->changeColor();
-	this->draw();
+	//this->changeColor();
 
 	//get the column position that the player shot
 	int col = m_shootingpoint->getXY().getY();
 
 	//bubble up moving-loop
-	int row = BUBBLE_ROW_END - 1;
-	for (; row >= BUBBLE_ROW_BEGIN + 1; row--)
+	int row = BUBBLE_ROW_END;
+	for (; row > BUBBLE_ROW_BEGIN; row--)
 	{
-		temp.up();
-
 		LinkedList<Bubble>::Iterator pointptr = bubbleList.begin();
 
 		for (; pointptr != bubbleList.end(); pointptr++)
 		{
-			if (((*pointptr).getX() == (row -1))&& ((*pointptr).getY() == col)) break;
+			if (((*pointptr).getX() == (row - 1))&& ((*pointptr).getY() == col)) break;
 		}
 
 		//check if the bubble has reached the final position or not
@@ -77,11 +76,11 @@ void Shooter::shooting()
 			//"templist" is list of bubbles that were hit
 			LinkedList<Bubble> templist;
 
-			templist.push_back(temp);
+			//templist.push_back(temp);
 
-			checkBubble(templist, temp, row - 1, col, count);
-			checkBubble(templist, temp, row, col + 1, count);
-			checkBubble(templist, temp, row, col - 1, count);
+			checkBubble(templist, temp.getColor(), row - 1, col, count);
+			checkBubble(templist, temp.getColor(), row, col + 1, count);
+			checkBubble(templist, temp.getColor(), row, col - 1, count);
 
 			if (count >= 3)
 			{
@@ -91,17 +90,23 @@ void Shooter::shooting()
 				while (templist.begin() != templist.end())
 				{
 					(templist.pop_front()).eraser();
+					if (templist.size() == 0) break;
 				}
+				//temp.eraser();
 			}
 			else
 			{
-				LinkedList<Bubble>::Iterator pointptr = templist.begin();
-
-				for (; pointptr != templist.end(); pointptr++)
+				while (templist.begin() != templist.end())
 				{
-					templist.move(bubbleList, pointptr);
+					bubbleList.push_back(templist.pop_front());
+					//templist.move(bubbleList, templist.begin());
+					if (templist.size() == 0) break;
 				}
+				bubbleList.push_back(temp);
+				//temp.draw();
 			}
+			shootingCheck = false;
+			return;
 
 			/*if (count >= 3)
 			{
@@ -142,17 +147,20 @@ void Shooter::shooting()
 					//templist.pop_front();
 				}
 			}*/
-		};
+		}
+		else temp.up();
 	}
+	shootingCheck = false;
 }
 
 void Shooter::changeColor()
 {
+	//srand((int)time(0));
 	Bubble* temp =  m_shootingpoint;
-	m_shootingpoint = new Bubble(*m_shootingpoint);
-	temp->eraser();
-	m_shootingpoint->draw();
+	m_shootingpoint = new Bubble(m_shootingpoint->getXY());
+	m_shootingpoint->eraser();
 	delete temp;
+	m_shootingpoint->draw();
 };
 
 void Shooter::left()

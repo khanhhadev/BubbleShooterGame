@@ -170,6 +170,7 @@ public:
 			}
 			m_size--;
 			list.push_back(*itr);
+			m_head = m_tail = nullptr;
 		}
 	}
 
@@ -196,9 +197,21 @@ public:
 				}
 			}
 			delete itr.m_nodeptr;
+			m_head = m_tail = nullptr;
 			m_size--;
 		}
+		else
+		{
+		}
 	};
+
+	void clear()
+	{
+		for (Iterator itr = begin(); itr != end(); itr++)
+		{
+			remove(itr);
+		}
+	}
 
 	//remove first element from container
 	T pop_front()

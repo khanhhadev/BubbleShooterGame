@@ -16,7 +16,6 @@
 
 extern Shooter myShooter;
 void shooter() {
-	//int i = 38;
 	int value;
 	do {
 		char key = _getch();
@@ -25,14 +24,17 @@ void shooter() {
 
 		case KEY_UP:
 			myShooter.shooting();
+			myShooter.changeColor();
 			break;
 		case KEY_LEFT:
 			myShooter.left();
 			break;
 		case KEY_RIGHT:
 			myShooter.right();
+			break; 
+		case KEY_X:
+			return;
 			break;
 		}
-	} while (value != KEY_X);
-
+	} while (true);
 }

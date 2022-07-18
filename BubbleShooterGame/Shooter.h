@@ -16,11 +16,11 @@ public:
 	void eraser();
 	int score(int timeconst, int num);
 	void shooting();
-	void checkBubble(LinkedList<Bubble>& templist, Bubble& temp, int row, int col, int& count);
+	void checkBubble(LinkedList<Bubble>& templist, COLOR maincolor, int row, int col, int& count);
 	Shooter();
 	~Shooter();
 private:
-	Bubble* m_shootingpoint;
+	Bubble* m_shootingpoint = nullptr;
 	COLOR m_bubblecolor;
 	int m_score = 0;
 	//float m_shootingangle;

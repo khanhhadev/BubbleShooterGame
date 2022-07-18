@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include "General.h"
-
+#include <mutex>
 using namespace std;
 #define PI 3.14
 
@@ -97,5 +97,6 @@ public:
 	bool operator== (Point& p);
 
 	bool operator== (const Point& p);
+
 };
 #endif

@@ -1,0 +1,16 @@
+﻿  GameInterface.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(39,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(48,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h(13,1): fatal error C1070: mismatched #if/#endif pair in file 'D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h'
+  Graphic.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h(13,1): fatal error C1070: mismatched #if/#endif pair in file 'D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h'
+  Main.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(39,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(48,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h(13,1): fatal error C1070: mismatched #if/#endif pair in file 'D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h'
+  Point.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(39,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(48,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h(13,1): fatal error C1070: mismatched #if/#endif pair in file 'D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h'
+  Display.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h(13,1): fatal error C1070: mismatched #if/#endif pair in file 'D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h'

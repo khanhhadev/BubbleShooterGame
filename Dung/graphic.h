@@ -3,10 +3,11 @@
 #include <conio.h>
 #include<ctime> 
 #include <windows.h> 
+#include<string>
 #define KEY_NONE	-1
 
 //dich con tro hien tai den toa do xy(x,y)
-void gotoXY(short int x,short int y)
+void gotoXY(int x,int y)
 {
 	HANDLE hConsoleOutput;
 	COORD Cursor_an_Pos = { x, y };
@@ -54,5 +55,12 @@ void clrscr()
 	csbiInfo.dwCursorPosition.X = 0;
 	csbiInfo.dwCursorPosition.Y = 0;
 	SetConsoleCursorPosition(hConsoleOut,csbiInfo.dwCursorPosition);
+}
+//----hidden pointer in console----------
+ void hidecursor(void) {
+	CONSOLE_CURSOR_INFO Info;
+	Info.bVisible = FALSE;
+	Info.dwSize = 20;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &Info);
 }
 

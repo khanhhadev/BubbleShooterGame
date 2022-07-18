@@ -6,6 +6,7 @@
 #include "Point.h"
 #include "Shooter.h"
 #include "Bubble.h"
+#include "Display.h"
 
 
 class GameInterface
@@ -15,7 +16,7 @@ public:
 	~GameInterface();
 
 	void createBubble();
-	void bubbleSort(LinkedList<Point> m_point);
+	void bubbleSort(LinkedList<Bubble> list);
 	friend ostream& operator<< (ostream& output, LinkedList<Point>& m_point);
 };
 

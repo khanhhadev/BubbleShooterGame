@@ -8,6 +8,7 @@ Bubble::Bubble()
 }
 Bubble::Bubble(Point& P)
 {
+	srand((int)time(0));
 	COLOR color[3] = { RED,GREEN,YELLOW };
 	int r = rand() % 3;
 
@@ -22,6 +23,7 @@ Bubble::Bubble(Point& P, COLOR color)
 };
 
 Bubble::Bubble(int x, int y)
+
 {
 	COLOR color[3] = { RED,GREEN,YELLOW };
 	int r = rand() % 3;
@@ -99,12 +101,15 @@ void Bubble::left()
 {
 	if (m_bubbleptr->getY() != BUBBLE_COLUMN_BEGIN)
 	{
+		//m_bubbleptr->erase();
 		Point* temp = m_bubbleptr;
 		m_bubbleptr = new Point(temp->getX(), temp->getY() - 1, BUBBLE, temp->getColor());
+		//temp->erase();
 		temp->erase();
-		m_bubbleptr->draw();
+		//m_bubbleptr->draw();
 		delete temp;
 	}
+	m_bubbleptr->draw();
 };
 
 void Bubble::right()
@@ -114,9 +119,10 @@ void Bubble::right()
 		Point* temp = m_bubbleptr;
 		m_bubbleptr = new Point(temp->getX(), temp->getY() + 1, BUBBLE, temp->getColor());
 		temp->erase();
-		m_bubbleptr->draw();
+		//m_bubbleptr->draw();
 		delete temp;
 	}
+	m_bubbleptr->draw();
 };
 
 void Bubble::eraser()
@@ -129,6 +135,24 @@ void Bubble::draw()
 {
 	m_bubbleptr->draw();
 }
+
+void Bubble::swap(Bubble& p1, Bubble& p2)
+{
+	Bubble temp = p1;
+	p1 = p2;
+	p2 = temp;
+};
+
+
+bool Bubble::operator> (Bubble& p)
+{
+	return (*m_bubbleptr > *p.m_bubbleptr);
+}
+
+bool Bubble::operator< (Bubble& p)
+{
+	return (*m_bubbleptr < *p.m_bubbleptr);
+};
 
 bool Bubble::operator==(Bubble& Obj)
 {
@@ -144,16 +168,22 @@ bool Bubble::operator==(const Point& Obj)
 {
 	return (*m_bubbleptr == Obj);
 };
+
+
+
 //assignment operator = oveloading
 Bubble& Bubble::operator= (Bubble& Obj)
 {
+	if (m_bubbleptr != nullptr) delete m_bubbleptr;
 	m_bubbleptr = new Point(*Obj.m_bubbleptr);
 	m_color = Obj.m_color;
 	return *this;
 };
+
 //assignment operator = oveloading
 Bubble& Bubble::operator= (const Bubble& Obj)
 {
+	if (m_bubbleptr != nullptr) delete m_bubbleptr;
 	m_bubbleptr = new Point(*Obj.m_bubbleptr);
 	m_color = Obj.m_color;
 	return *this;
