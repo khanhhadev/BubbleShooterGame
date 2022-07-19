@@ -49,7 +49,8 @@ using namespace std;
 	typedef enum MODE {
 		PLAY,
 		WAIT,
-		LOSE
+		LOSE, 
+		EXIT
 	};
 
 	typedef enum PLAYMODE {

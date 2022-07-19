@@ -1,26 +1,13 @@
-﻿  Bubble.cpp
+﻿  Display.cpp
 D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(47,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(53,3): warning C4091: 'typedef ': ignored on left of 'MODE' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(59,3): warning C4091: 'typedef ': ignored on left of 'PLAYMODE' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(66,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
-  GameInterface.cpp
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(47,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(53,3): warning C4091: 'typedef ': ignored on left of 'MODE' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(59,3): warning C4091: 'typedef ': ignored on left of 'PLAYMODE' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(66,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
-  Main.cpp
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(47,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(53,3): warning C4091: 'typedef ': ignored on left of 'MODE' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(59,3): warning C4091: 'typedef ': ignored on left of 'PLAYMODE' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(66,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
-  Shooter.cpp
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(47,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(53,3): warning C4091: 'typedef ': ignored on left of 'MODE' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(59,3): warning C4091: 'typedef ': ignored on left of 'PLAYMODE' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(66,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(54,3): warning C4091: 'typedef ': ignored on left of 'MODE' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(60,3): warning C4091: 'typedef ': ignored on left of 'PLAYMODE' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(67,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Display.cpp(82,20): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  3 of 200 functions ( 1.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(64): warning C4172: returning address of local variable or temporary: iterator
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(77): warning C4172: returning address of local variable or temporary: iterator
+  All 203 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   BubbleShooterGame.vcxproj -> D:\C++\Code\TestCplusplus\BubbleShooterGame\Release\BubbleShooterGame.exe

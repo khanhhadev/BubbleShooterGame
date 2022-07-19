@@ -1,7 +1,8 @@
-﻿  Point.cpp
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(37,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(46,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h(18,26): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Graphic.h(18,29): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Point.cpp(84,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+﻿  Shooter.cpp
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(47,3): warning C4091: 'typedef ': ignored on left of 'CHARACTER' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(53,3): warning C4091: 'typedef ': ignored on left of 'MODE' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(59,3): warning C4091: 'typedef ': ignored on left of 'PLAYMODE' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\General.h(66,3): warning C4091: 'typedef ': ignored on left of 'COLOR' when no variable is declared
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\Shooter.cpp(28,6): warning C4101: 'x': unreferenced local variable
+D:\C++\Code\TestCplusplus\BubbleShooterGame\BubbleShooterGame\LinkedList.h(64): warning C4172: returning address of local variable or temporary: iterator
   BubbleShooterGame.vcxproj -> D:\C++\Code\TestCplusplus\BubbleShooterGame\x64\Debug\BubbleShooterGame.exe

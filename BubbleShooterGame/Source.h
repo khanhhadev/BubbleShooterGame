@@ -7,44 +7,79 @@
 #include <functional>
 #include <conio.h>
 
-MODE mymode = WAIT;
-PLAYMODE myplay;
-LinkedList<Bubble> bubbleList;
+extern MODE mymode;
+extern PLAYMODE myplay;
+extern LinkedList<Bubble> bubbleList;
 
+
+void loseGame()
+{
+	char key;
+	do
+	{
+		key = _getch();
+		switch (key) {
+		case KEY_SPACE:
+		{
+			mymode = WAIT;/*
+			system("cls");
+			hidecursor();
+			startGame();*/
+			return;
+		}
+			break;
+		case KEY_ESC:
+		{
+			mymode = EXIT;
+			return;
+		}
+		break;
+		default:
+			break;
+		}
+	} while (key != KEY_SPACE);
+}
 //game mode navigation
 void navigation()
 {
-	int key_input;
+	char key;
 	do {
+		system("cls");
 		hidecursor();
 		startGame();
-		char key = _getch();
-		key_input = key;
-		switch (_getch()) {
+		key = _getch();
+
+		switch (key) {
 		case KEY_SPACE:
 		{
-			mymode = PLAY;
+ 			mymode = PLAY;
 			myplay = NOTHING;
-			clrscr();
-			Shooter myShooter;
+
+			bubbleList.clear();
 			GameInterface myGame;
-			drawDScore();
-			displayScore(0);
+			Shooter myShooter;
 			thread newone = thread(std::bind(&GameInterface::createBubble, &myGame));
 			thread new2 = thread(std::bind(&Shooter::shootercontrol, &myShooter));
+
 			newone.join();
 			new2.join();
-			while (mymode == PLAY) {
-			
+			while (mymode == PLAY) 
+			{
 			};
+			if (mymode == LOSE)
+			{
+				endGame();
+				displayScore(myShooter.getScore());
+				loseGame();
+			}
 		}
 			break;
-		case KEY_X:
-			return;
+		case KEY_ESC:
+			mymode = EXIT;
 			break;
 		default:
 			break;
 		}
-	} while (true);
+	} while (mymode != EXIT);
 
 }

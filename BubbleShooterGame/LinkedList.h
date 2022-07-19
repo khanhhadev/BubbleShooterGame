@@ -41,6 +41,13 @@ public:
 		Iterator(m_node* const NodePtr) noexcept :
 			m_nodeptr(NodePtr) { }
 
+		static void swap(Iterator& itr1, Iterator& itr2)
+		{
+			m_node* temp = itr1.m_nodeptr;
+			itr1.m_nodeptr = itr2.m_nodeptr;
+			itr2.m_nodeptr = temp;
+		}
+
 		//prefix ++ overloading
 		LinkedList::Iterator& operator++()
 		{
@@ -207,9 +214,9 @@ public:
 
 	void clear()
 	{
-		for (Iterator itr = begin(); itr != end(); itr++)
+		while (m_size > 0)
 		{
-			remove(itr);
+			pop_front();
 		}
 	}
 

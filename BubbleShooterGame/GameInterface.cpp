@@ -3,8 +3,8 @@
 #include <Windows.h>
 #include "Display.h"
 
-extern PLAYMODE myplay;
 extern MODE mymode;
+extern PLAYMODE myplay;
 extern LinkedList<Bubble> bubbleList;
 
 //void SetScreen(int x, int y);
@@ -28,8 +28,11 @@ extern LinkedList<Bubble> bubbleList;
 
 GameInterface::GameInterface()
 {
+	system("cls");
 	hidecursor();
 	drawWall();
+	drawDScore();
+	displayScore(0);
 }
 
 GameInterface::~GameInterface()
@@ -40,19 +43,33 @@ GameInterface::~GameInterface()
 
 void GameInterface::createBubble()
 {
-	int timecon = 5000; //ms
-	while (true)
+	int timecon = 2000; //ms
+	while (mymode == PLAY)
 	{
-		//while (myplay == SHOOTING) {};
+		while (myplay == SHOOTING) {};
 		myplay = CREATING;
-		//srand((int)time(0));
-		if (timecon > 1000) timecon -= 100;
-		for (LinkedList<Bubble>::Iterator iterator = bubbleList.begin();
-			iterator != bubbleList.end(); iterator++)
+
+		Bubble::bubbleSort(bubbleList);
+		if (timecon > 1000) timecon -= 100; 
+
+		LinkedList<Bubble>::Iterator itr = bubbleList.begin();
+
+		if (bubbleList.size() > 0)
 		{
-			(*iterator).down();
+			if ((*itr).getX() == BUBBLE_ROW_END)
+			{
+				myplay = NOTHING;
+				mymode = LOSE;
+				return;
+			}
 		}
-		for (int col = BUBBLE_COLUMN_BEGIN; col <= BUBBLE_COLUMN_END; col++)
+
+		for (; itr != bubbleList.end(); itr++)
+		{
+			(*itr).down();
+		};
+
+		for (int col = BUBBLE_COLUMN_END; col >= BUBBLE_COLUMN_BEGIN; col--)
 		{
 			Bubble temp(2, col);
 			temp.draw();
@@ -75,17 +92,3 @@ ostream& operator<< (ostream& output, LinkedList<Point>& m_point)
 	return output;
 }
 
-
-//sort list of Point
-void GameInterface::bubbleSort(LinkedList<Bubble>& list)
-{
-	for (LinkedList<Bubble>::Iterator iterator1 = list.begin();
-		iterator1 != list.rbegin(); iterator1++)
-	{
-		for (LinkedList<Bubble>::Iterator iterator2 = iterator1 + 1;
-			iterator2 != list.end(); iterator2++)
-		{
-			if (*iterator1 < *iterator2) Bubble::swap(*iterator1, *iterator2);
-		}
-	}
-}

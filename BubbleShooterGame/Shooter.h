@@ -14,6 +14,7 @@ public:
 	void right();
 	void draw();
 	void eraser();
+	int getScore() const;
 	int score(int timeconst, int num);
 	void shootercontrol();
 	void shooting();

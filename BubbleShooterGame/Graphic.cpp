@@ -12,6 +12,15 @@ void gotoXY(int x, int y, char a, WORD color)
 	SetConsoleCursorPosition(hConsoleOutput, Cursor_an_Pos);
 	std::cout << a;
 }
+void gotoXY(int x, int y, char a)
+{
+	std::lock_guard<std::mutex> lock(A);
+	HANDLE hConsoleOutput;
+	COORD Cursor_an_Pos = { x, y };
+	hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleCursorPosition(hConsoleOutput, Cursor_an_Pos);
+	std::cout << a;
+}
 //set mau cho character
 void SetColor(WORD color)
 {

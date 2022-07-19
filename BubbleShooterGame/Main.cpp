@@ -1,16 +1,19 @@
 #include "Source.h"
 #include "Display.h"
 
-//void SetScreen(int x, int y);
-//void hidecursor(void);
 
-
-bool shootingCheck(false);
+MODE mymode = WAIT;
+PLAYMODE myplay;
+LinkedList<Bubble> bubbleList;
 
 int main()
 {
 	SetScreen(50, 50);
 	SetConsoleTitle(L"BUBBLE SHOOTER");
+	srand((int)time(0));
+
+	hidecursor();
+	startGame();
 
 	navigation();
 

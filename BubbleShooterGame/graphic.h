@@ -12,6 +12,8 @@
 #include "General.h"
 
 void gotoXY(int x, int y, char a, WORD color);
+void gotoXY(int x, int y);
+void gotoXY(int x, int y, char a);
 void SetColor(WORD color);
 // set size console
 void SetScreen(int x, int y);

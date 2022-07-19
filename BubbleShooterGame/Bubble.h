@@ -19,6 +19,7 @@ public:
 	void draw();
 	void eraser();
 	static void swap(Bubble&, Bubble&);
+	static void bubbleSort(LinkedList<Bubble>& list);
 	Bubble();
 	Bubble(Point& P);
 	Bubble(Point& P, COLOR);
