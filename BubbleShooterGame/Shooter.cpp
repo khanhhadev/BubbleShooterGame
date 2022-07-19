@@ -86,7 +86,6 @@ void Shooter::shooting()
 
 			templist.push_back(temp);
 
-			checkBubble(templist, tempcolor, row + 1, col, count);
 			checkBubble(templist, tempcolor, row - 1, col, count);
 			checkBubble(templist, tempcolor, row, col + 1, count);
 			checkBubble(templist, tempcolor, row, col - 1, count);
@@ -97,18 +96,16 @@ void Shooter::shooting()
 				displayScore(m_score);
 				//LinkedList<Bubble>::Iterator itr = templist.begin();
 
-				while (templist.begin() != templist.end())
+				while (templist.size() != 0)
 				{
 					(templist.pop_front()).eraser();
-					if (templist.size() == 0) break;
 				}
 			}
 			else
 			{
-				while (templist.begin() != templist.end())
+				while (templist.size() != 0)
 				{
 					bubbleList.push_back(templist.pop_front());
-					if (templist.size() == 0) break;
 				}
 			}
 			Bubble::bubbleSort(bubbleList);

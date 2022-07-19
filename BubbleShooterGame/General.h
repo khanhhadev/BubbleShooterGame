@@ -62,6 +62,7 @@ using namespace std;
 		BLACK = 7,
 		RED = 12,
 		GREEN = 10,
+		BLUE = 1,
 		YELLOW = 14,
 		WHITE = 7
 	};

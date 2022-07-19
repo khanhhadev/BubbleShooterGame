@@ -76,6 +76,7 @@ void navigation()
 			break;
 		case KEY_ESC:
 			mymode = EXIT;
+			return;
 			break;
 		default:
 			break;

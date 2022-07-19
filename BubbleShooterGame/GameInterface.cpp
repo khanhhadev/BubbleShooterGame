@@ -43,7 +43,7 @@ GameInterface::~GameInterface()
 
 void GameInterface::createBubble()
 {
-	int timecon = 2000; //ms
+	int timecon = 3500; //ms
 	while (mymode == PLAY)
 	{
 		while (myplay == SHOOTING) {};

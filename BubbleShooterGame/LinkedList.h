@@ -178,6 +178,7 @@ public:
 			else { m_head = m_tail = nullptr; }
 			m_size--;
 			list.push_back(*itr);
+			//if (itr.m_nodeptr != nullptr) delete itr.m_nodeptr;
 		}
 	}
 
@@ -225,10 +226,24 @@ public:
 	{
 		m_node* tempPtr = m_head;
 		m_node temp = *m_head;
-		m_head = m_head->m_next;
-		delete tempPtr;
-		m_size--;
-		return temp.m_value;
+		/*if (m_size == 2)
+		{
+			m_head = m_tail;
+		} else */
+		if (m_size == 1)
+		{
+			delete m_head;
+			m_size--;
+			m_head = m_tail = nullptr;
+			return temp.m_value;
+		}
+		else
+		{
+			m_head = m_head->m_next;
+			delete tempPtr;
+			m_size--;
+			return temp.m_value;
+		}
 	};
 
 	//remove last element from container
