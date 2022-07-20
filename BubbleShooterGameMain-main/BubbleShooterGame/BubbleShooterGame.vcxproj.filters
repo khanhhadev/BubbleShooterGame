@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameInterface">
+      <UniqueIdentifier>{8d0f20d1-069a-4815-b424-ef3126b6d038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bubble">
+      <UniqueIdentifier>{e8bdac3e-ad9d-4bda-b8a5-7d8ba14f9e8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shooter">
+      <UniqueIdentifier>{b570acdc-76e2-4480-b584-0766bffd4211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="List">
+      <UniqueIdentifier>{2bdc28cd-081a-4407-8a9f-f27138023f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{e8d8485e-4d20-4c4a-9487-2c4e5463e70e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4f717d31-8fa1-422f-b139-a87cd4032504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="General">
+      <UniqueIdentifier>{745bb0c5-6933-492b-a9ee-61d1bb99911b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Display">
+      <UniqueIdentifier>{8a9e063e-6c97-4262-88a8-3144cd5ebf2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{0365f56f-740f-4827-bdc1-4fbd70e7b895}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameInterface.h">
+      <Filter>GameInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter.h">
+      <Filter>Shooter</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>List</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="General.h">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="Source.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="mylib.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bubble.h">
+      <Filter>Bubble</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Point.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Bubble.cpp">
+      <Filter>Bubble</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter.cpp">
+      <Filter>Shooter</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInterface.cpp">
+      <Filter>GameInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Display.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
