@@ -48,6 +48,17 @@ void SetScreen(int x, int y) {
 	font->dwFontSize.Y = y;
 	SetCurrentConsoleFontEx(cons, 0, font);
 }
+
+void changeSize() {
+	HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coord;
+	BOOL ok;
+	coord.X = 800;
+	coord.Y = 800 + 1;
+	ok = SetConsoleScreenBufferSize(hStdout, coord);
+	SMALL_RECT test = { 0, 0, coord.X - 1, coord.Y - 1 };
+	SetConsoleWindowInfo(hStdout, ok, &test);
+}
 //-------------------------Screen-------------------------
 void clrscr()
 {

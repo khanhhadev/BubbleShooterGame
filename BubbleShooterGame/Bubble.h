@@ -49,7 +49,7 @@ public:
 private:
 	//refrence to list of Point belonging to Bubble
 	Point* m_bubbleptr = nullptr;
-	COLOR m_color;
+	//COLOR m_color;
 };
 
 #endif // !BUBBLE_H

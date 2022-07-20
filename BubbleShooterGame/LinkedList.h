@@ -173,6 +173,7 @@ public:
 				else
 				{
 					(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
+					(itr.m_nodeptr)->m_next->m_previous = (itr.m_nodeptr)->m_previous;
 				}
 			}
 			else { m_head = m_tail = nullptr; }
@@ -202,10 +203,13 @@ public:
 				else
 				{
 					(itr.m_nodeptr)->m_previous->m_next = (itr.m_nodeptr)->m_next;
+					(itr.m_nodeptr)->m_next->m_previous = (itr.m_nodeptr)->m_previous;
 				}
+			} else 
+			{
+				m_head = m_tail = nullptr;
 			}
-			delete itr.m_nodeptr;
-			m_head = m_tail = nullptr;
+			//delete itr.m_nodeptr;
 			m_size--;
 		}
 		else

@@ -21,6 +21,7 @@ int Shooter::score(int timeconst, int num)
 	return score;
 }
 
+//check bubble to delete bubble same color
 void Shooter::checkBubble(LinkedList<Bubble>& templist, COLOR maincolor,int row, int col, int& count)
 {
 	if ((row < BUBBLE_ROW_BEGIN) || (row > BUBBLE_ROW_END) || (col < BUBBLE_COLUMN_BEGIN) || (col > BUBBLE_COLUMN_END)) return;
@@ -38,9 +39,9 @@ void Shooter::checkBubble(LinkedList<Bubble>& templist, COLOR maincolor,int row,
 	}
 	if (pointptr != bubbleList.end())
 	{
-		/*templist.push_back(Bubble(tmp1));
-		bubbleList.remove(pointptr);*/
-		bubbleList.move(templist, pointptr);
+		templist.push_back(*pointptr);
+		bubbleList.remove(pointptr);
+		//bubbleList.move(templist, pointptr);
 		count++;
 
 		checkBubble(templist, maincolor, row + 1, col, count);
@@ -51,6 +52,7 @@ void Shooter::checkBubble(LinkedList<Bubble>& templist, COLOR maincolor,int row,
 	return;
 };
 
+//shooting event 
 void Shooter::shooting()
 {
 	while (myplay == CREATING)
@@ -100,6 +102,7 @@ void Shooter::shooting()
 				{
 					(templist.pop_front()).eraser();
 				}
+				
 			}
 			else
 			{
@@ -107,8 +110,17 @@ void Shooter::shooting()
 				{
 					bubbleList.push_back(templist.pop_front());
 				}
+				//if (templist.size() != 0)
+				//{
+				//	LinkedList<Bubble>::Iterator ptr = bubbleList.begin();
+
+				//	for (; ptr != templist.end(); ptr++)
+				//	{
+				//		bubbleList.push_back(*(ptr));
+				//		templist.remove(ptr);
+				//	}
+				//}
 			}
-			Bubble::bubbleSort(bubbleList);
 			myplay = NOTHING;
 			return;
 		}
@@ -121,7 +133,7 @@ void Shooter::shooting()
 	myplay = NOTHING;
 }
 
-
+//Control shooter to shift left, right or shoot
 void Shooter::shootercontrol() {
 	char key;
 	do {
@@ -146,12 +158,11 @@ void Shooter::shootercontrol() {
 		}
 		myplay = NOTHING;
 	} while (mymode == PLAY);
-	//clrscr();
 }
 
+// change shooter color (green, red, yellow)
 void Shooter::changeColor()
 {
-	//srand((int)time(0));
 	Bubble* temp =  m_shootingpoint;
 	m_shootingpoint = new Bubble(m_shootingpoint->getXY());
 	m_shootingpoint->eraser();

@@ -17,6 +17,7 @@ void gotoXY(int x, int y, char a);
 void SetColor(WORD color);
 // set size console
 void SetScreen(int x, int y);
+void changeSize();
 void clrscr();
 void hidecursor(void);
 #endif 

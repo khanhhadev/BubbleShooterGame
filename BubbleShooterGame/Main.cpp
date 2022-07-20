@@ -9,6 +9,7 @@ LinkedList<Bubble> bubbleList;
 int main()
 {
 	SetScreen(50, 50);
+	changeSize();
 	SetConsoleTitle(L"BUBBLE SHOOTER");
 	srand((int)time(0));
 
@@ -16,8 +17,7 @@ int main()
 	startGame();
 
 	navigation();
-
-	_getch();
+	system("cls");
 	return 0;
 }
 

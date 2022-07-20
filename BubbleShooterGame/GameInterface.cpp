@@ -7,25 +7,6 @@ extern MODE mymode;
 extern PLAYMODE myplay;
 extern LinkedList<Bubble> bubbleList;
 
-//void SetScreen(int x, int y);
-//void hidecursor(void);
-//delay function
-//void delay(int a)
-//{
-//	int add = 0;
-//	int time;
-//	int i;
-//
-//	// delay time increasing speed changing
-//	time = a * 1000000;
-//	for (i = 0; i < time; i++)
-//	{
-//		add *= i;
-//		add++;
-//		add++;
-//	}
-//}
-
 GameInterface::GameInterface()
 {
 	system("cls");
@@ -40,10 +21,10 @@ GameInterface::~GameInterface()
 
 }
 
-
+//create new bubble row
 void GameInterface::createBubble()
 {
-	int timecon = 3500; //ms
+	int timecon = 5000; //ms
 	while (mymode == PLAY)
 	{
 		while (myplay == SHOOTING) {};
@@ -64,6 +45,7 @@ void GameInterface::createBubble()
 			}
 		}
 
+		//shift bubble down
 		for (; itr != bubbleList.end(); itr++)
 		{
 			(*itr).down();
